@@ -1,0 +1,26 @@
+<div>
+  <h1>Gerenciamento de Livros</h1>
+
+  <form (ngSubmit)="addBook()">
+    <div>
+      <label for="title">Título:</label>
+      <input [(ngModel)]="newBook.title" name="title" id="title" type="text" placeholder="Título do livro" required>
+    </div>
+    <div>
+      <label for="author">Autor:</label>
+      <input [(ngModel)]="newBook.author" name="author" id="author" type="text" placeholder="Autor do livro" required>
+    </div>
+    <div>
+      <label for="year">Ano de Publicação:</label>
+      <input [(ngModel)]="newBook.publicationYear" name="year" id="year" type="number" placeholder="Ano de publicação" required>
+    </div>
+    <button type="submit">Adicionar Livro</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let book of books">
+      <strong>{{ book.title }}</strong> por {{ book.author }} ({{ book.publicationYear }})
+    </li>
+  </ul>
+</div>
+
